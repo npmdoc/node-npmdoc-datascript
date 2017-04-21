@@ -1,0 +1,1488 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/tonsky/datascript">datascript (v0.16.1)</a>
+</h1>
+<h4>Immutable in-memory triplestore with Datalog queries</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.datascript">module datascript</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.conn_from_datoms">
+            function <span class="apidocSignatureSpan">datascript.</span>conn_from_datoms
+            <span class="apidocSignatureSpan">(a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.conn_from_db">
+            function <span class="apidocSignatureSpan">datascript.</span>conn_from_db
+            <span class="apidocSignatureSpan">(b)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.create_conn">
+            function <span class="apidocSignatureSpan">datascript.</span>create_conn
+            <span class="apidocSignatureSpan">(a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.datoms">
+            function <span class="apidocSignatureSpan">datascript.</span>datoms
+            <span class="apidocSignatureSpan">(a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.db">
+            function <span class="apidocSignatureSpan">datascript.</span>db
+            <span class="apidocSignatureSpan">(b)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.db_with">
+            function <span class="apidocSignatureSpan">datascript.</span>db_with
+            <span class="apidocSignatureSpan">(b, a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.empty_db">
+            function <span class="apidocSignatureSpan">datascript.</span>empty_db
+            <span class="apidocSignatureSpan">(a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.entity">
+            function <span class="apidocSignatureSpan">datascript.</span>entity
+            <span class="apidocSignatureSpan">(b, a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.entity_db">
+            function <span class="apidocSignatureSpan">datascript.</span>entity_db
+            <span class="apidocSignatureSpan">(b)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.filter">
+            function <span class="apidocSignatureSpan">datascript.</span>filter
+            <span class="apidocSignatureSpan">(b, a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.index_range">
+            function <span class="apidocSignatureSpan">datascript.</span>index_range
+            <span class="apidocSignatureSpan">(b, a, c, d)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.init_db">
+            function <span class="apidocSignatureSpan">datascript.</span>init_db
+            <span class="apidocSignatureSpan">(a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.is_filtered">
+            function <span class="apidocSignatureSpan">datascript.</span>is_filtered
+            <span class="apidocSignatureSpan">(b)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.listen">
+            function <span class="apidocSignatureSpan">datascript.</span>listen
+            <span class="apidocSignatureSpan">(a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.pull">
+            function <span class="apidocSignatureSpan">datascript.</span>pull
+            <span class="apidocSignatureSpan">(b, a, c)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.pull_many">
+            function <span class="apidocSignatureSpan">datascript.</span>pull_many
+            <span class="apidocSignatureSpan">(b, a, c)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.q">
+            function <span class="apidocSignatureSpan">datascript.</span>q
+            <span class="apidocSignatureSpan">(a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.reset_conn">
+            function <span class="apidocSignatureSpan">datascript.</span>reset_conn
+            <span class="apidocSignatureSpan">(a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.resolve_tempid">
+            function <span class="apidocSignatureSpan">datascript.</span>resolve_tempid
+            <span class="apidocSignatureSpan">(b, a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.seek_datoms">
+            function <span class="apidocSignatureSpan">datascript.</span>seek_datoms
+            <span class="apidocSignatureSpan">(a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.squuid">
+            function <span class="apidocSignatureSpan">datascript.</span>squuid
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.squuid_time_millis">
+            function <span class="apidocSignatureSpan">datascript.</span>squuid_time_millis
+            <span class="apidocSignatureSpan">(b)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.touch">
+            function <span class="apidocSignatureSpan">datascript.</span>touch
+            <span class="apidocSignatureSpan">(b)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.transact">
+            function <span class="apidocSignatureSpan">datascript.</span>transact
+            <span class="apidocSignatureSpan">(a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.unlisten">
+            function <span class="apidocSignatureSpan">datascript.</span>unlisten
+            <span class="apidocSignatureSpan">(b, a)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.datascript.conn_from_datoms">module datascript.conn_from_datoms</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.conn_from_datoms.conn_from_datoms">
+            function <span class="apidocSignatureSpan">datascript.</span>conn_from_datoms
+            <span class="apidocSignatureSpan">(a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.conn_from_datoms.b">
+            function <span class="apidocSignatureSpan">datascript.conn_from_datoms.</span>b
+            <span class="apidocSignatureSpan">(b, a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.conn_from_datoms.c">
+            function <span class="apidocSignatureSpan">datascript.conn_from_datoms.</span>c
+            <span class="apidocSignatureSpan">(b)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">datascript.conn_from_datoms.</span>w</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.datascript.create_conn">module datascript.create_conn</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.create_conn.create_conn">
+            function <span class="apidocSignatureSpan">datascript.</span>create_conn
+            <span class="apidocSignatureSpan">(a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.create_conn.H">
+            function <span class="apidocSignatureSpan">datascript.create_conn.</span>H
+            <span class="apidocSignatureSpan">(b)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.create_conn.h">
+            function <span class="apidocSignatureSpan">datascript.create_conn.</span>h
+            <span class="apidocSignatureSpan">(b)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">datascript.create_conn.</span>w</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.datascript.datoms">module datascript.datoms</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.datoms.datoms">
+            function <span class="apidocSignatureSpan">datascript.</span>datoms
+            <span class="apidocSignatureSpan">(a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.datoms.H">
+            function <span class="apidocSignatureSpan">datascript.datoms.</span>H
+            <span class="apidocSignatureSpan">(b)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.datoms.h">
+            function <span class="apidocSignatureSpan">datascript.datoms.</span>h
+            <span class="apidocSignatureSpan">(b, a, c)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">datascript.datoms.</span>w</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.datascript.empty_db">module datascript.empty_db</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.empty_db.empty_db">
+            function <span class="apidocSignatureSpan">datascript.</span>empty_db
+            <span class="apidocSignatureSpan">(a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.empty_db.H">
+            function <span class="apidocSignatureSpan">datascript.empty_db.</span>H
+            <span class="apidocSignatureSpan">(b)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.empty_db.h">
+            function <span class="apidocSignatureSpan">datascript.empty_db.</span>h
+            <span class="apidocSignatureSpan">(b)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">datascript.empty_db.</span>w</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.datascript.init_db">module datascript.init_db</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.init_db.init_db">
+            function <span class="apidocSignatureSpan">datascript.</span>init_db
+            <span class="apidocSignatureSpan">(a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.init_db.H">
+            function <span class="apidocSignatureSpan">datascript.init_db.</span>H
+            <span class="apidocSignatureSpan">(b)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.init_db.h">
+            function <span class="apidocSignatureSpan">datascript.init_db.</span>h
+            <span class="apidocSignatureSpan">(b, a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">datascript.init_db.</span>w</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.datascript.listen">module datascript.listen</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.listen.listen">
+            function <span class="apidocSignatureSpan">datascript.</span>listen
+            <span class="apidocSignatureSpan">(a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.listen.b">
+            function <span class="apidocSignatureSpan">datascript.listen.</span>b
+            <span class="apidocSignatureSpan">(b, a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.listen.f">
+            function <span class="apidocSignatureSpan">datascript.listen.</span>f
+            <span class="apidocSignatureSpan">(b, a, c)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">datascript.listen.</span>w</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.datascript.q">module datascript.q</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.q.q">
+            function <span class="apidocSignatureSpan">datascript.</span>q
+            <span class="apidocSignatureSpan">(a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.q.H">
+            function <span class="apidocSignatureSpan">datascript.q.</span>H
+            <span class="apidocSignatureSpan">(b)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.q.h">
+            function <span class="apidocSignatureSpan">datascript.q.</span>h
+            <span class="apidocSignatureSpan">(b, a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">datascript.q.</span>w</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.datascript.reset_conn">module datascript.reset_conn</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.reset_conn.reset_conn">
+            function <span class="apidocSignatureSpan">datascript.</span>reset_conn
+            <span class="apidocSignatureSpan">(a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.reset_conn.H">
+            function <span class="apidocSignatureSpan">datascript.reset_conn.</span>H
+            <span class="apidocSignatureSpan">(b)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.reset_conn.h">
+            function <span class="apidocSignatureSpan">datascript.reset_conn.</span>h
+            <span class="apidocSignatureSpan">(b, a, c)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">datascript.reset_conn.</span>w</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.datascript.seek_datoms">module datascript.seek_datoms</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.seek_datoms.seek_datoms">
+            function <span class="apidocSignatureSpan">datascript.</span>seek_datoms
+            <span class="apidocSignatureSpan">(a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.seek_datoms.H">
+            function <span class="apidocSignatureSpan">datascript.seek_datoms.</span>H
+            <span class="apidocSignatureSpan">(b)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.seek_datoms.h">
+            function <span class="apidocSignatureSpan">datascript.seek_datoms.</span>h
+            <span class="apidocSignatureSpan">(b, a, c)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">datascript.seek_datoms.</span>w</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.datascript.transact">module datascript.transact</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.transact.transact">
+            function <span class="apidocSignatureSpan">datascript.</span>transact
+            <span class="apidocSignatureSpan">(a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.transact.H">
+            function <span class="apidocSignatureSpan">datascript.transact.</span>H
+            <span class="apidocSignatureSpan">(b)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.datascript.transact.h">
+            function <span class="apidocSignatureSpan">datascript.transact.</span>h
+            <span class="apidocSignatureSpan">(b, a, c)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">datascript.transact.</span>w</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.datascript" id="apidoc.module.datascript">module datascript</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.conn_from_datoms" id="apidoc.element.datascript.conn_from_datoms">
+        function <span class="apidocSignatureSpan">datascript.</span>conn_from_datoms
+        <span class="apidocSignatureSpan">(a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function cx(a){for(var c=[],d=arguments.length,e=0;;)if(e&lt;d)c.push(arguments[e]),e+=1;else break;switch(c.length){case 1:return
+cx.c(arguments[0]);case 2:return cx.b(arguments[0],arguments[1]);default:throw Error([t("Invalid arity: "),t(c.length)].join(""));}}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.conn_from_db" id="apidoc.element.datascript.conn_from_db">
+        function <span class="apidocSignatureSpan">datascript.</span>conn_from_db
+        <span class="apidocSignatureSpan">(b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Xv(b){var a=new n(null,1,[Nn,Af?Af(Md):zf.call(null,Md)],null);return zf.f?zf.f(b,va,a):zf.call(null,b,va,a)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.create_conn" id="apidoc.element.datascript.create_conn">
+        function <span class="apidocSignatureSpan">datascript.</span>create_conn
+        <span class="apidocSignatureSpan">(a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ax(a){for(var c=[],d=arguments.length,e=0;;)if(e&lt;d)c.push(arguments[e]),e+=1;else break;return ax.h(0&lt;c.length?new Aa(c
+.slice(0),0):null)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.datoms" id="apidoc.element.datascript.datoms">
+        function <span class="apidocSignatureSpan">datascript.</span>datoms
+        <span class="apidocSignatureSpan">(a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function hx(a){for(var c=[],d=arguments.length,e=0;;)if(e&lt;d)c.push(arguments[e]),e+=1;else break;return hx.h(arguments[0],arguments
+[1],2&lt;c.length?new Aa(c.slice(2),0):null)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.db" id="apidoc.element.datascript.db">
+        function <span class="apidocSignatureSpan">datascript.</span>db
+        <span class="apidocSignatureSpan">(b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">db = function (b){return I.c?I.c(b):I.call(null,b)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.db_with" id="apidoc.element.datascript.db_with">
+        function <span class="apidocSignatureSpan">datascript.</span>db_with
+        <span class="apidocSignatureSpan">(b, a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">db_with = function (b, a){return Uv(b,Qw(a))}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.empty_db" id="apidoc.element.datascript.empty_db">
+        function <span class="apidocSignatureSpan">datascript.</span>empty_db
+        <span class="apidocSignatureSpan">(a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Uw(a){for(var c=[],d=arguments.length,e=0;;)if(e&lt;d)c.push(arguments[e]),e+=1;else break;return Uw.h(0&lt;c.length?new Aa(c
+.slice(0),0):null)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.entity" id="apidoc.element.datascript.entity">
+        function <span class="apidocSignatureSpan">datascript.</span>entity
+        <span class="apidocSignatureSpan">(b, a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">entity = function (b, a){var c=hj(a);return Lv.b?Lv.b(b,c):Lv.call(null,b,c)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.entity_db" id="apidoc.element.datascript.entity_db">
+        function <span class="apidocSignatureSpan">datascript.</span>entity_db
+        <span class="apidocSignatureSpan">(b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">entity_db = function (b){return b.db}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.filter" id="apidoc.element.datascript.filter">
+        function <span class="apidocSignatureSpan">datascript.</span>filter
+        <span class="apidocSignatureSpan">(b, a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">filter = function (b, a){if(r(Sv(b))){var c=b.Ja;return new zq(c,function(b,c,f){return function(b){var d=c.c?c.c(b):c.call(null,b);return
+ r(d)?a.b?a.b(f,b):a.call(null,f,b):d}}(b,b.Qa,c),Af?Af(0):zf.call(null,0),null,null,null)}return new zq(b,function(c){return a.
+b?a.b(b,c):a.call(null,b,c)},Af?Af(0):zf.call(null,0),null,null,null)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.index_range" id="apidoc.element.datascript.index_range">
+        function <span class="apidocSignatureSpan">datascript.</span>index_range
+        <span class="apidocSignatureSpan">(b, a, c, d)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">index_range = function (b, a, c, d){return Ba(kq(b,a,c,d))}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.init_db" id="apidoc.element.datascript.init_db">
+        function <span class="apidocSignatureSpan">datascript.</span>init_db
+        <span class="apidocSignatureSpan">(a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Vw(a){for(var c=[],d=arguments.length,e=0;;)if(e&lt;d)c.push(arguments[e]),e+=1;else break;return Vw.h(arguments[0],1&lt;c.length
+?new Aa(c.slice(1),0):null)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.is_filtered" id="apidoc.element.datascript.is_filtered">
+        function <span class="apidocSignatureSpan">datascript.</span>is_filtered
+        <span class="apidocSignatureSpan">(b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Sv(b){return b instanceof zq}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.listen" id="apidoc.element.datascript.listen">
+        function <span class="apidocSignatureSpan">datascript.</span>listen
+        <span class="apidocSignatureSpan">(a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Zv(a){for(var c=[],d=arguments.length,e=0;;)if(e&lt;d)c.push(arguments[e]),e+=1;else break;switch(c.length){case 2:return
+Zv.b(arguments[0],arguments[1]);case 3:return Zv.f(arguments[0],arguments[1],arguments[2]);default:throw Error([t("Invalid arity
+: "),t(c.length)].join(""));}}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.pull" id="apidoc.element.datascript.pull">
+        function <span class="apidocSignatureSpan">datascript.</span>pull
+        <span class="apidocSignatureSpan">(b, a, c)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pull = function (b, a, c){a=du(a);c=hj(c);b=Nv.f?Nv.f(b,a,c):Nv.call(null,b,a,c);return Tw(b)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.pull_many" id="apidoc.element.datascript.pull_many">
+        function <span class="apidocSignatureSpan">datascript.</span>pull_many
+        <span class="apidocSignatureSpan">(b, a, c)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pull_many = function (b, a, c){a=du(a);c=hj(c);b=Ov.f?Ov.f(b,a,c):Ov.call(null,b,a,c);return Tw(b)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.q" id="apidoc.element.datascript.q">
+        function <span class="apidocSignatureSpan">datascript.</span>q
+        <span class="apidocSignatureSpan">(a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Ww(a){for(var c=[],d=arguments.length,e=0;;)if(e&lt;d)c.push(arguments[e]),e+=1;else break;return Ww.h(arguments[0],1&lt;c.length
+?new Aa(c.slice(1),0):null)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.reset_conn" id="apidoc.element.datascript.reset_conn">
+        function <span class="apidocSignatureSpan">datascript.</span>reset_conn
+        <span class="apidocSignatureSpan">(a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ex(a){for(var c=[],d=arguments.length,e=0;;)if(e&lt;d)c.push(arguments[e]),e+=1;else break;return ex.h(arguments[0],arguments
+[1],2&lt;c.length?new Aa(c.slice(2),0):null)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.resolve_tempid" id="apidoc.element.datascript.resolve_tempid">
+        function <span class="apidocSignatureSpan">datascript.</span>resolve_tempid
+        <span class="apidocSignatureSpan">(b, a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">resolve_tempid = function (b, a){return b[""+t(a)]}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.seek_datoms" id="apidoc.element.datascript.seek_datoms">
+        function <span class="apidocSignatureSpan">datascript.</span>seek_datoms
+        <span class="apidocSignatureSpan">(a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ix(a){for(var c=[],d=arguments.length,e=0;;)if(e&lt;d)c.push(arguments[e]),e+=1;else break;return ix.h(arguments[0],arguments
+[1],2&lt;c.length?new Aa(c.slice(2),0):null)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.squuid" id="apidoc.element.datascript.squuid">
+        function <span class="apidocSignatureSpan">datascript.</span>squuid
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">squuid = function (){var b=t,a=[t(pw((new Date).getTime()/1E3|0,8)),t("-"),t(pw(kj(65536),4)),t("-"),t(pw(kj(65536)&amp;4095|16384,4)),t("-"),
+t(pw(kj(65536)&amp;16383|32768,4)),t("-"),t(pw(kj(65536),4)),t(pw(kj(65536),4)),t(pw(kj(65536),4))].join("");return""+b(new nj(a,null
+))}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.squuid_time_millis" id="apidoc.element.datascript.squuid_time_millis">
+        function <span class="apidocSignatureSpan">datascript.</span>squuid_time_millis
+        <span class="apidocSignatureSpan">(b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">squuid_time_millis = function (b){b=we.f(""+t(new nj(b,null)),0,8);return 1E3*parseInt(b,16)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.touch" id="apidoc.element.datascript.touch">
+        function <span class="apidocSignatureSpan">datascript.</span>touch
+        <span class="apidocSignatureSpan">(b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">touch = function (b){var a;a=b.pd;a=I.c?I.c(a):I.call(null,a);r(a)||(a=kf(hq(b.db,new V(null,1,5,W,[b.eid],null))),r(a)&amp;&amp;(Hf(b.cache,xu(
+b.db,yu(b.db,a))),dc(b.pd,!0)));return b}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.transact" id="apidoc.element.datascript.transact">
+        function <span class="apidocSignatureSpan">datascript.</span>transact
+        <span class="apidocSignatureSpan">(a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function dx(a){for(var c=[],d=arguments.length,e=0;;)if(e&lt;d)c.push(arguments[e]),e+=1;else break;return dx.h(arguments[0],arguments
+[1],2&lt;c.length?new Aa(c.slice(2),0):null)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.unlisten" id="apidoc.element.datascript.unlisten">
+        function <span class="apidocSignatureSpan">datascript.</span>unlisten
+        <span class="apidocSignatureSpan">(b, a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unlisten = function (b, a){return Ef.f(Nn.c(pd(b)),md,a)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.datascript.conn_from_datoms" id="apidoc.module.datascript.conn_from_datoms">module datascript.conn_from_datoms</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.conn_from_datoms.conn_from_datoms" id="apidoc.element.datascript.conn_from_datoms.conn_from_datoms">
+        function <span class="apidocSignatureSpan">datascript.</span>conn_from_datoms
+        <span class="apidocSignatureSpan">(a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function cx(a){for(var c=[],d=arguments.length,e=0;;)if(e&lt;d)c.push(arguments[e]),e+=1;else break;switch(c.length){case 1:return
+cx.c(arguments[0]);case 2:return cx.b(arguments[0],arguments[1]);default:throw Error([t("Invalid arity: "),t(c.length)].join(""));}}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.conn_from_datoms.b" id="apidoc.element.datascript.conn_from_datoms.b">
+        function <span class="apidocSignatureSpan">datascript.conn_from_datoms.</span>b
+        <span class="apidocSignatureSpan">(b, a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">b = function (b, a){var c=Vw.h(b,J([a],0));return bx.c?bx.c(c):bx.call(null,c)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.conn_from_datoms.c" id="apidoc.element.datascript.conn_from_datoms.c">
+        function <span class="apidocSignatureSpan">datascript.conn_from_datoms.</span>c
+        <span class="apidocSignatureSpan">(b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">c = function (b){b=Vw(b);return bx.c?bx.c(b):bx.call(null,b)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.datascript.create_conn" id="apidoc.module.datascript.create_conn">module datascript.create_conn</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.create_conn.create_conn" id="apidoc.element.datascript.create_conn.create_conn">
+        function <span class="apidocSignatureSpan">datascript.</span>create_conn
+        <span class="apidocSignatureSpan">(a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ax(a){for(var c=[],d=arguments.length,e=0;;)if(e&lt;d)c.push(arguments[e]),e+=1;else break;return ax.h(0&lt;c.length?new Aa(c
+.slice(0),0):null)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.create_conn.H" id="apidoc.element.datascript.create_conn.H">
+        function <span class="apidocSignatureSpan">datascript.create_conn.</span>H
+        <span class="apidocSignatureSpan">(b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">H = function (b){return ax.h(q(b))}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.create_conn.h" id="apidoc.element.datascript.create_conn.h">
+        function <span class="apidocSignatureSpan">datascript.create_conn.</span>h
+        <span class="apidocSignatureSpan">(b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">h = function (b){b=O(b,0);b=Pw(b);return Xv(Qv.c?Qv.c(b):Qv.call(null,b))}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.datascript.datoms" id="apidoc.module.datascript.datoms">module datascript.datoms</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.datoms.datoms" id="apidoc.element.datascript.datoms.datoms">
+        function <span class="apidocSignatureSpan">datascript.</span>datoms
+        <span class="apidocSignatureSpan">(a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function hx(a){for(var c=[],d=arguments.length,e=0;;)if(e&lt;d)c.push(arguments[e]),e+=1;else break;return hx.h(arguments[0],arguments
+[1],2&lt;c.length?new Aa(c.slice(2),0):null)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.datoms.H" id="apidoc.element.datascript.datoms.H">
+        function <span class="apidocSignatureSpan">datascript.datoms.</span>H
+        <span class="apidocSignatureSpan">(b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">H = function (b){var a=E(b),c=F(b);b=E(c);c=F(c);return hx.h(a,b,c)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.datoms.h" id="apidoc.element.datascript.datoms.h">
+        function <span class="apidocSignatureSpan">datascript.datoms.</span>h
+        <span class="apidocSignatureSpan">(b, a, c)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">h = function (b, a, c){return Ba(ff(Vv,b,Ow(a),c))}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.datascript.empty_db" id="apidoc.module.datascript.empty_db">module datascript.empty_db</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.empty_db.empty_db" id="apidoc.element.datascript.empty_db.empty_db">
+        function <span class="apidocSignatureSpan">datascript.</span>empty_db
+        <span class="apidocSignatureSpan">(a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Uw(a){for(var c=[],d=arguments.length,e=0;;)if(e&lt;d)c.push(arguments[e]),e+=1;else break;return Uw.h(0&lt;c.length?new Aa(c
+.slice(0),0):null)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.empty_db.H" id="apidoc.element.datascript.empty_db.H">
+        function <span class="apidocSignatureSpan">datascript.empty_db.</span>H
+        <span class="apidocSignatureSpan">(b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">H = function (b){return Uw.h(q(b))}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.empty_db.h" id="apidoc.element.datascript.empty_db.h">
+        function <span class="apidocSignatureSpan">datascript.empty_db.</span>h
+        <span class="apidocSignatureSpan">(b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">h = function (b){b=O(b,0);b=Pw(b);return Qv.c?Qv.c(b):Qv.call(null,b)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.datascript.init_db" id="apidoc.module.datascript.init_db">module datascript.init_db</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.init_db.init_db" id="apidoc.element.datascript.init_db.init_db">
+        function <span class="apidocSignatureSpan">datascript.</span>init_db
+        <span class="apidocSignatureSpan">(a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Vw(a){for(var c=[],d=arguments.length,e=0;;)if(e&lt;d)c.push(arguments[e]),e+=1;else break;return Vw.h(arguments[0],1&lt;c.length
+?new Aa(c.slice(1),0):null)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.init_db.H" id="apidoc.element.datascript.init_db.H">
+        function <span class="apidocSignatureSpan">datascript.init_db.</span>H
+        <span class="apidocSignatureSpan">(b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">H = function (b){var a=E(b);b=F(b);return Vw.h(a,b)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.init_db.h" id="apidoc.element.datascript.init_db.h">
+        function <span class="apidocSignatureSpan">datascript.init_db.</span>h
+        <span class="apidocSignatureSpan">(b, a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">h = function (b, a){var c=O(a,0),d=X.b(Sw,b),c=Pw(c);return Rv.b?Rv.b(d,c):Rv.call(null,d,c)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.datascript.listen" id="apidoc.module.datascript.listen">module datascript.listen</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.listen.listen" id="apidoc.element.datascript.listen.listen">
+        function <span class="apidocSignatureSpan">datascript.</span>listen
+        <span class="apidocSignatureSpan">(a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Zv(a){for(var c=[],d=arguments.length,e=0;;)if(e&lt;d)c.push(arguments[e]),e+=1;else break;switch(c.length){case 2:return
+Zv.b(arguments[0],arguments[1]);case 3:return Zv.f(arguments[0],arguments[1],arguments[2]);default:throw Error([t("Invalid arity
+: "),t(c.length)].join(""));}}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.listen.b" id="apidoc.element.datascript.listen.b">
+        function <span class="apidocSignatureSpan">datascript.listen.</span>b
+        <span class="apidocSignatureSpan">(b, a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">b = function (b, a){return Zv.f(b,jj.s(),a)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.listen.f" id="apidoc.element.datascript.listen.f">
+        function <span class="apidocSignatureSpan">datascript.listen.</span>f
+        <span class="apidocSignatureSpan">(b, a, c)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">f = function (b, a, c){Ef.N(Nn.c(pd(b)),P,a,c);return a}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.datascript.q" id="apidoc.module.datascript.q">module datascript.q</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.q.q" id="apidoc.element.datascript.q.q">
+        function <span class="apidocSignatureSpan">datascript.</span>q
+        <span class="apidocSignatureSpan">(a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Ww(a){for(var c=[],d=arguments.length,e=0;;)if(e&lt;d)c.push(arguments[e]),e+=1;else break;return Ww.h(arguments[0],1&lt;c.length
+?new Aa(c.slice(1),0):null)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.q.H" id="apidoc.element.datascript.q.H">
+        function <span class="apidocSignatureSpan">datascript.q.</span>H
+        <span class="apidocSignatureSpan">(b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">H = function (b){var a=E(b);b=F(b);return Ww.h(a,b)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.q.h" id="apidoc.element.datascript.q.h">
+        function <span class="apidocSignatureSpan">datascript.q.</span>h
+        <span class="apidocSignatureSpan">(b, a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">h = function (b, a){var c=du(b),c=ef(Kv,c,a);return ej(c)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.datascript.reset_conn" id="apidoc.module.datascript.reset_conn">module datascript.reset_conn</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.reset_conn.reset_conn" id="apidoc.element.datascript.reset_conn.reset_conn">
+        function <span class="apidocSignatureSpan">datascript.</span>reset_conn
+        <span class="apidocSignatureSpan">(a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ex(a){for(var c=[],d=arguments.length,e=0;;)if(e&lt;d)c.push(arguments[e]),e+=1;else break;return ex.h(arguments[0],arguments
+[1],2&lt;c.length?new Aa(c.slice(2),0):null)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.reset_conn.H" id="apidoc.element.datascript.reset_conn.H">
+        function <span class="apidocSignatureSpan">datascript.reset_conn.</span>H
+        <span class="apidocSignatureSpan">(b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">H = function (b){var a=E(b),c=F(b);b=E(c);c=F(c);return ex.h(a,b,c)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.reset_conn.h" id="apidoc.element.datascript.reset_conn.h">
+        function <span class="apidocSignatureSpan">datascript.reset_conn.</span>h
+        <span class="apidocSignatureSpan">(b, a, c)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">h = function (b, a, c){var d=O(c,0);c={db_before:I.c?I.c(b):I.call(null,b),db_after:a,tx_data:Ba(U.b(X.b(function(){return function(a){
+return P.f(a,Ik,!1)}}(c,d),Vv.b(I.c?I.c(b):I.call(null,b),Ll)),Vv.b(a,Ll))),tx_meta:d};Df.b?Df.b(b,a):Df.call(null,b,a);for(var
+d=q(function(){var a=Nn.c(pd(b));return I.c?I.c(a):I.call(null,a)}()),e=null,f=0,h=0;;)if(h&lt;f){var k=e.L(null,h);O(k,0);k=O(k,1);
+k.c?k.c(c):k.call(null,c);h+=1}else if(d=q(d))Q(d)?(f=A(d),d=C(d),e=f,f=M(f)):(e=E(d),O(e,0),e=O(e,1),e.c?e.c(c):
+e.call(null,c),d=F(d),e=null,f=0),h=0;else break;return a}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.datascript.seek_datoms" id="apidoc.module.datascript.seek_datoms">module datascript.seek_datoms</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.seek_datoms.seek_datoms" id="apidoc.element.datascript.seek_datoms.seek_datoms">
+        function <span class="apidocSignatureSpan">datascript.</span>seek_datoms
+        <span class="apidocSignatureSpan">(a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ix(a){for(var c=[],d=arguments.length,e=0;;)if(e&lt;d)c.push(arguments[e]),e+=1;else break;return ix.h(arguments[0],arguments
+[1],2&lt;c.length?new Aa(c.slice(2),0):null)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.seek_datoms.H" id="apidoc.element.datascript.seek_datoms.H">
+        function <span class="apidocSignatureSpan">datascript.seek_datoms.</span>H
+        <span class="apidocSignatureSpan">(b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">H = function (b){var a=E(b),c=F(b);b=E(c);c=F(c);return ix.h(a,b,c)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.seek_datoms.h" id="apidoc.element.datascript.seek_datoms.h">
+        function <span class="apidocSignatureSpan">datascript.seek_datoms.</span>h
+        <span class="apidocSignatureSpan">(b, a, c)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">h = function (b, a, c){return Ba(ff(Wv,b,Ow(a),c))}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.datascript.transact" id="apidoc.module.datascript.transact">module datascript.transact</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.transact.transact" id="apidoc.element.datascript.transact.transact">
+        function <span class="apidocSignatureSpan">datascript.</span>transact
+        <span class="apidocSignatureSpan">(a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function dx(a){for(var c=[],d=arguments.length,e=0;;)if(e&lt;d)c.push(arguments[e]),e+=1;else break;return dx.h(arguments[0],arguments
+[1],2&lt;c.length?new Aa(c.slice(2),0):null)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.transact.H" id="apidoc.element.datascript.transact.H">
+        function <span class="apidocSignatureSpan">datascript.transact.</span>H
+        <span class="apidocSignatureSpan">(b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">H = function (b){var a=E(b),c=F(b);b=E(c);c=F(c);return dx.h(a,b,c)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.datascript.transact.h" id="apidoc.element.datascript.transact.h">
+        function <span class="apidocSignatureSpan">datascript.transact.</span>h
+        <span class="apidocSignatureSpan">(b, a, c)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">h = function (b, a, c){c=O(c,0);a=Qw(a);a=Yv(b,a,c);c=Vl.c(a);for(var d=Ak.c(a),e=Ba(Xl.c(a)),f=yj.c(a),h={},f=q(f),k=null,l=0,m=0;;)if
+(m&lt;l){var p=k.L(null,m),u=O(p,0),p=O(p,1);h[""+t(u)]=p;m+=1}else if(f=q(f))Q(f)?(l=A(f),f=C(f),k=l,l=M(l)):(l=E(f),k=O(l,0),l=O(
+l,1),h[""+t(k)]=l,f=F(f),k=null,l=0),m=0;else break;a={db_before:c,db_after:d,tx_data:e,tempids:h,tx_meta:rn.c(a)};b=Nn.c(pd(b));
+b=I.c?I.c(b):I.call(null,b);b=q(b);c=null;for(e=d=0;;)if(e&lt;d)h=c.L(null,e),O(h,0),h=O(h,1),h.c?h.c(a):h.call(null,
+a),e+=1;else if(b=q(b))Q(b)?(d=A(b),b=C(b),c=d,d=M(d)):(c=E(b),O(c,0),c=O(c,1),c.c?c.c(a):c.call(null,a),b=F(b),c=null,d=0),e=0;
+else break;return a}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
